@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>新的一天</title>
+      <link href="/2020/02/08/%E6%96%B0%E7%9A%84%E4%B8%80%E5%A4%A9/"/>
+      <url>/2020/02/08/%E6%96%B0%E7%9A%84%E4%B8%80%E5%A4%A9/</url>
+      
+        <content type="html"><![CDATA[<p>5656565</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello! world!</title>
       <link href="/2020/02/04/hello-world/"/>
       <url>/2020/02/04/hello-world/</url>
@@ -16,5 +29,73 @@
     
     
   
+  
+    
+    
+    <entry>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Slides</title>
+      <link href="/slides/index.html"/>
+      <url>/slides/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>lalala</title>
+      <link href="/lalala/index.html"/>
+      <url>/lalala/index.html</url>
+      
+        <content type="html"><![CDATA[<p>slide:<br>  theme: night<br>  separator: ===<br>  separator_vertical: ==</p><hr><h3 id="hexo-theme-melody-v1-5"><a href="#hexo-theme-melody-v1-5" class="headerlink" title="hexo-theme-melody v1.5"></a>hexo-theme-melody <small>v1.5</small></h3><!-- .slide: data-background="#49B1F5" --><p>Supports iframe &amp; slides. You can use a layout called <code>slides</code> to enabled the slides layout.</p><p>Also you can add a <code>iframe</code> front-matter with the <code>slides</code> layout in your <code>md</code> file to enable the iframe page.</p><h3 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h3><!-- .slide: data-transition="concave" data-background="#C7916B" --><h4 id="1-Add-a-slides-page"><a href="#1-Add-a-slides-page" class="headerlink" title="1. Add a slides page"></a>1. Add a slides page</h4><p>// ……</p><p>==</p><p>// ……</p><p>===</p><h4 id="2-Add-the-layout-type"><a href="#2-Add-the-layout-type" class="headerlink" title="2. Add the layout type"></a>2. Add the layout type</h4><!-- .slide: data-transition="fade" data-background="#00C4B6" --><p>// ……</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>404</title>
+      <link href="//404.html"/>
+      <url>//404.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
   
 </search>
