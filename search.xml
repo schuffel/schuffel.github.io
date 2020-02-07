@@ -12,6 +12,12 @@
       
       
       
+        <tags>
+            
+            <tag> 54 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -48,7 +54,7 @@
       <link href="/gallery/index.html"/>
       <url>/gallery/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[    <div      class="gallery-item"      style="background-image: url('https://ws1.sinaimg.cn/large/8700af19gy1fp5i6o2vghj20ea0eajse')"      data-title="melody"      data-url="https://ws1.sinaimg.cn/large/8700af19gy1fp5i6o2vghj20ea0eajse"    >      <div class="gallery-item__title">        melody      </div>    </div>  ]]></content>
       
     </entry>
     
