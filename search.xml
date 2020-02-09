@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>hexo常用指令</title>
+      <link href="/2020/02/10/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
+      <url>/2020/02/10/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<p>前段时间刚部署好博客，特地记录一下几个常见命令。<br>1.创建博文<br><code>hexo new &quot;title&quot;</code><br>2.发博文外加部署到github<br><code>hexo clean    hexo s/server;    hexo g/generate;    hexo d/deploy;</code><br>3.组合命令<br>    <code>hexo g -d/hexo d -g;</code></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello! world!</title>
       <link href="/2020/02/04/hello-world/"/>
       <url>/2020/02/04/hello-world/</url>
@@ -32,6 +45,17 @@
     
     
     <entry>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>404</title>
       <link href="//404.html"/>
       <url>//404.html</url>
@@ -54,22 +78,11 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>叫我刘小哲</title>
+      <link href="/me/index.html"/>
+      <url>/me/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>lalala</title>
-      <link href="/lalala/index.html"/>
-      <url>/lalala/index.html</url>
-      
-        <content type="html"><![CDATA[<p>slide:<br>  theme: night<br>  separator: ===<br>  separator_vertical: ==</p><hr><h3 id="hexo-theme-melody-v1-5"><a href="#hexo-theme-melody-v1-5" class="headerlink" title="hexo-theme-melody v1.5"></a>hexo-theme-melody <small>v1.5</small></h3><!-- .slide: data-background="#49B1F5" --><p>Supports iframe &amp; slides. You can use a layout called <code>slides</code> to enabled the slides layout.</p><p>Also you can add a <code>iframe</code> front-matter with the <code>slides</code> layout in your <code>md</code> file to enable the iframe page.</p><h3 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h3><!-- .slide: data-transition="concave" data-background="#C7916B" --><h4 id="1-Add-a-slides-page"><a href="#1-Add-a-slides-page" class="headerlink" title="1. Add a slides page"></a>1. Add a slides page</h4><p>// ……</p><p>==</p><p>// ……</p><p>===</p><h4 id="2-Add-the-layout-type"><a href="#2-Add-the-layout-type" class="headerlink" title="2. Add the layout type"></a>2. Add the layout type</h4><!-- .slide: data-transition="fade" data-background="#00C4B6" --><p>// ……</p>]]></content>
+        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2020/02/06/XD6iSmcYtBNHqEI.jpg" alt="伟大的刘皇"><br>楚地人，现居蜀地成都。<br>2013～2020 求学于<a href="https://www.uestc.edu.cn/" target="_blank" rel="noopener">郫县高级男子技术学院</a>。</p><p>喜欢舞蹈，坊间缪赞“c513 dancing king”。<br>爱好游泳，人称“浪里小白条”。</p><p>爱好编程。<br>科幻电影。</p><p>欢迎交流!<br>links：<br><a href="https://www.zhihu.com/people/xiaozhe1996" target="_blank" rel="noopener">知乎</a><br><a href="https://music.163.com/#/user/home?id=82739078" target="_blank" rel="noopener">网易云</a><br><a href="https://github.com/schuffel" target="_blank" rel="noopener">github</a></p>]]></content>
       
     </entry>
     
@@ -92,17 +105,6 @@
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>叫我刘小哲</title>
-      <link href="/me/index.html"/>
-      <url>/me/index.html</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2020/02/06/XD6iSmcYtBNHqEI.jpg" alt="伟大的刘皇"><br>楚地人，现居蜀地成都。<br>2013～2020 求学于<a href="https://www.uestc.edu.cn/" target="_blank" rel="noopener">郫县高级男子技术学院</a>。</p><p>喜欢舞蹈，坊间缪赞“c513 dancing king”。<br>爱好游泳，人称“浪里小白条”。</p><p>爱好编程。<br>科幻电影。</p><p>欢迎交流!<br>links：<br><a href="https://www.zhihu.com/people/xiaozhe1996" target="_blank" rel="noopener">知乎</a><br><a href="https://music.163.com/#/user/home?id=82739078" target="_blank" rel="noopener">网易云</a><br><a href="https://github.com/schuffel" target="_blank" rel="noopener">github</a></p>]]></content>
       
     </entry>
     
