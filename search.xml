@@ -8,7 +8,7 @@
       <link href="/2020/02/10/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
       <url>/2020/02/10/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
       
-        <content type="html"><![CDATA[<p>前段时间刚部署好博客，特地记录一下几个常见命令。<br>1.创建博文<br><code>hexo new &quot;title&quot;</code><br>2.发博文外加部署到github<br><code>hexo clean    hexo s/server;    hexo g/generate;    hexo d/deploy;</code><br>3.组合命令<br>    <code>hexo g -d/hexo d -g;</code></p>]]></content>
+        <content type="html"><![CDATA[<p>前段时间刚部署好博客，特地记录一下几个常见命令。<br>1.创建博文</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;title&quot;;</span><br></pre></td></tr></table></figure><p>2.发博文外加部署到github</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean;</span><br><span class="line">hexo s&#x2F;server;</span><br><span class="line">hexo g&#x2F;generate;</span><br><span class="line">hexo d&#x2F;deploy;</span><br></pre></td></tr></table></figure><p>3.组合命令</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g -d&#x2F;hexo d -g;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -45,17 +45,6 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>404</title>
       <link href="//404.html"/>
       <url>//404.html</url>
@@ -78,6 +67,17 @@
     
     
     <entry>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>叫我刘小哲</title>
       <link href="/me/index.html"/>
       <url>/me/index.html</url>
@@ -89,9 +89,9 @@
     
     
     <entry>
-      <title>Slides</title>
-      <link href="/slides/index.html"/>
-      <url>/slides/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -100,9 +100,9 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>Slides</title>
+      <link href="/slides/index.html"/>
+      <url>/slides/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
