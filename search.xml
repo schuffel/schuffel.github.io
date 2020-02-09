@@ -32,9 +32,9 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>404</title>
+      <link href="//404.html"/>
+      <url>//404.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -54,9 +54,9 @@
     
     
     <entry>
-      <title>Slides</title>
-      <link href="/slides/index.html"/>
-      <url>/slides/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -76,6 +76,17 @@
     
     
     <entry>
+      <title>Slides</title>
+      <link href="/slides/index.html"/>
+      <url>/slides/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>标签</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
@@ -87,22 +98,11 @@
     
     
     <entry>
-      <title>404</title>
-      <link href="//404.html"/>
-      <url>//404.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>叫我刘小哲</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <link href="/me/index.html"/>
+      <url>/me/index.html</url>
       
-        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2020/02/06/XD6iSmcYtBNHqEI.jpg" alt="伟大的刘皇"><br>楚地人，现居蜀地成都。<br>2013～2020 求学于<a href="https://www.uestc.edu.cn/" target="_blank" rel="noopener">郫县高级男子技术学院</a>。</p><p>喜欢舞蹈，坊间缪赞“c513 dancing king”。说来惭愧！<br>爱好游泳，人称“浪里小白条”。</p><p>爱好编程。<br>科幻电影。</p><p>欢迎小姐姐加好友!<br>links：<br><a href="https://www.zhihu.com/people/xiaozhe1996" target="_blank" rel="noopener">知乎</a><br><a href="https://music.163.com/#/user/home?id=82739078" target="_blank" rel="noopener">网易云</a><br><a href="https://github.com/schuffel" target="_blank" rel="noopener">github</a></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2020/02/06/XD6iSmcYtBNHqEI.jpg" alt="伟大的刘皇"><br>楚地人，现居蜀地成都。<br>2013～2020 求学于<a href="https://www.uestc.edu.cn/" target="_blank" rel="noopener">郫县高级男子技术学院</a>。</p><p>喜欢舞蹈，坊间缪赞“c513 dancing king”。<br>爱好游泳，人称“浪里小白条”。</p><p>爱好编程。<br>科幻电影。</p><p>欢迎交流!<br>links：<br><a href="https://www.zhihu.com/people/xiaozhe1996" target="_blank" rel="noopener">知乎</a><br><a href="https://music.163.com/#/user/home?id=82739078" target="_blank" rel="noopener">网易云</a><br><a href="https://github.com/schuffel" target="_blank" rel="noopener">github</a></p>]]></content>
       
     </entry>
     
