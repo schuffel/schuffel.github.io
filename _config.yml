@@ -59,8 +59,9 @@ theme: melody
 deploy:
   type: git
   repo: 'https://github.com/schuffel/schuffel.github.io.git'
-  branch: master
+  github: git@github.com:schuffel/schuffel.github.io.git
   repository: 'git@github.com:schuffel/schuffel.github.io.git'
+  branch: master
 search:
   path: search.xml
   field: all
