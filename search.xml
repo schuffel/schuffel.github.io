@@ -172,42 +172,9 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="categories/index.html"/>
-      <url>categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>404</title>
-      <link href="/404.html"/>
-      <url>/404.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Gallery</title>
       <link href="gallery/index.html"/>
       <url>gallery/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Slides</title>
-      <link href="slides/index.html"/>
-      <url>slides/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -230,6 +197,39 @@
       <title>标签</title>
       <link href="tags/index.html"/>
       <url>tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Slides</title>
+      <link href="slides/index.html"/>
+      <url>slides/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>404</title>
+      <link href="/404.html"/>
+      <url>/404.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分类</title>
+      <link href="categories/index.html"/>
+      <url>categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

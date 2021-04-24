@@ -1,107 +1,69 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="新电脑上部署博客（已搭建博客前提下）"><meta name="keywords" content=""><meta name="author" content="伟大的刘皇"><meta name="copyright" content="伟大的刘皇"><title>新电脑上部署博客（已搭建博客前提下） | 画船师的小房子</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.7.0"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-block top_img
-  - var top_img = page.top_img || theme.post_meta.top_img || theme.top_img || config.top_img
-  if (top_img && page.top_img !== false)
-    - var bg_img = top_img !== true ? `background-image: url(${top_img})` : ''
-    - var flag = top_img === true ? 'no-bg' : ''
-    div#top-container(style=bg_img class=flag)
-      include ./includes/header.pug
-      #post-info
-        #post-title= page.title || _p('no_title')
-        #post-meta
-          if (theme.post_meta.date_type)
-            if (theme.post_meta.date_type === 'both')
-              time.post-meta__date
-                i.fa.fa-calendar(aria-hidden="true")
-                =' '+_p('post.created')+' '+date(page.date, config.date_format)
-                span.post-meta__separator |
-                i.fa.fa-calendar-check-o(aria-hidden="true")
-                =' '+_p('post.updated')+' '+date(page.updated, config.date_format)
-            else
-              - var date_type = theme.post_meta.date_type === 'updated' ? 'updated' : 'date'
-              time.post-meta__date #[i.fa.fa-calendar(aria-hidden="true")] #[=date(page[date_type], config.date_format)]
-          if (theme.post_meta.categories && page.categories.data.length > 0)
-            if (theme.post_meta.date_type)
-              span.post-meta__separator |
-            each item, index in page.categories.data
-              i.fa.fa-inbox.post-meta__icon(aria-hidden="true")
-              a(href=url_for(item.path)).post-meta__categories #[=item.name]
-              if (index < page.categories.data.length - 1)
-                 i.fa.fa-angle-right(aria-hidden="true")
-          if (theme.disqus.enable && theme.disqus.count)
-            if (theme.post_meta.date_type || theme.post_meta.categories && page.categories.data.length > 0)
-              span.post-meta__separator |
-            i.fa.fa-comment-o.post-meta__icon(aria-hidden="true")
-            a(href=url_for(page.path) + '#disqus_thread')
-              span.disqus-comment-count(data-disqus-identifier=page.path)
-          if (theme.wordcount && theme.wordcount.enable)
-            .post-meta-wordcount
-              span= _p('post.wordcount') + ': '
-              span.word-count= wordcount(page.content)
-              span.post-meta__separator |
-              span= _p('post.min2read', min2read(page.content, {cn: 350, en: 160}))
-  else
-    div#top-container.plain
-      include ./includes/header.pug
-
-block content
-  article#post(class="")
-    if (!top_img)
-      #post-title.plain= page.title || _p('no_title')
-      #post-meta
-        if (theme.post_meta.date_type)
-          - var date_type = theme.post_meta.date_type === 'updated' ? '' : 'date'
-          time.post-meta__date #[i.fa.fa-calendar(aria-hidden="true")] #[=date(page[date_type], config.date_format)]
-        if (theme.post_meta.categories && page.categories.data.length > 0)
-          if (theme.post_meta.date_type)
-            span.post-meta__separator |
-          each item, index in page.categories.data
-            i.fa.fa-inbox(aria-hidden="true")
-            a(href=url_for(item.path)).post-meta__categories  #[=item.name]
-            if (index < page.categories.data.length - 1)
-                i.fa.fa-angle-right.post-meta__separator(aria-hidden="true")
-        if (theme.disqus.enable && theme.disqus.count)
-          if (theme.post_meta.date_type || theme.post_meta.categories && page.categories.data.length > 0)
-            span.post-meta__separator |
-          i.fa.fa-comment-o(aria-hidden="true")
-          a(href=url_for(page.path) + '#disqus_thread')
-            span.disqus-comment-count(data-disqus-identifier=page.path)
-        if (theme.wordcount && theme.wordcount.enable)
-          span.post-meta__separator |
-          span.post-meta-wordcount
-            span= _p('post.wordcount') + ': '
-            span.word-count= wordcount(page.content)
-            span.post-meta__separator |
-            span= _p('post.min2read', min2read(page.content, {cn: 350, en: 160}))
-    #post-content.article-container!= page.content
-  if (theme.post_copyright && theme.post_copyright.enable)
-    .post-copyright
-      .post-copyright__author
-        span.post-copyright-meta= _p('post.copyright.author') + ": "
-        span.post-copyright-info
-          a(href=`mailto:${config.email}`) #[=config.author]
-      .post-copyright__type
-        span.post-copyright-meta= _p('post.copyright.link') + ": "
-        span.post-copyright-info
-          a(href=url_for(page.permalink)) #[=page.permalink]
-      .post-copyright__notice
-        span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
-        span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
-  if (theme.post_meta.tags)
-    .post-meta__tag-list
-      each item, index in page.tags.data
-        a(href=url_for(item.path)).post-meta__tags #[=item.name]
-  if (theme.QR_code)
-    if (theme.QR_code.length > 0)
-      .post-qr-code
-        each item in theme.QR_code
-          .post-qr-code-item
-            img.post-qr-code__img(src=(item.itemlist||item).img)
-            .post-qr-code__desc=(item.itemlist||item).text
-  include includes/share/index.pug
-  include includes/pagination.pug
-  if (theme.adv && theme.adv.enable)
-    .post-adv!= theme.adv.info
-  if page.comments !== false
-    include includes/comments/index.pug
+ga('create', 'UA-157869378-1', 'auto');
+ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://v1.hitokoto.cn/?encode=js&amp;charset=utf-8&amp;select=.footer_custom_text" defer></script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="画船师的小房子" type="application/atom+xml">
+</head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E9%9D%A2%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2%EF%BC%88hexo%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">如何在新电脑上面更新博客（hexo）</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://i.loli.net/2020/02/07/IODqByH45XZdowc.jpg"></div><div class="author-info__name text-center">伟大的刘皇</div><div class="author-info__description text-center">you are so special</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/schuffel">just follow me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">9</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">2</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">4</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://molunerfinn.com">Molunerfinn</a><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://www.zuozuovera.com/">左左vera</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://i.loli.net/2020/02/10/jGIHa7zBni34DfE.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">画船师的小房子</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/me">me</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> Search</span></a></span></div><div id="post-info"><div id="post-title">新电脑上部署博客（已搭建博客前提下）</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-29</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E9%85%8D%E7%BD%AE/">配置</a><div class="post-meta-wordcount"><span>Word count: </span><span class="word-count">808</span><span class="post-meta__separator">|</span><span>Reading time: 2 min</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="如何在新电脑上面更新博客（hexo）"><a href="#如何在新电脑上面更新博客（hexo）" class="headerlink" title="如何在新电脑上面更新博客（hexo）"></a>如何在新电脑上面更新博客（hexo）</h1><p>&emsp;朕于端午节从学校毕业回家后，一直闲着无事。想到年初在家搭建的博客还没有来得及上传东西，写写文章。心中甚是过意不去（假话，hhh）。如今正好有空来侍弄这玩意。这也称得上我第一篇真正意义上写的文章吧！<br>&emsp;事情的起源是这样的，朕于年初利用hexo在github上搭建了一个个人博客网站。当时博客文件是写在家中台式机器上，然后通过hexo -g和hexo -d命令上传至github。如今我笔记本带回家里了，我想在笔记本上也能愉快的写博客，甚至我在以后其他新的电脑上也能愉快写博客。<br>&emsp;那么问题来了。由于原来我们的文件是存储在最初电脑上，通过hexo -d 分发出去的是编译后的文件，用来生成网页的。换句话说，我们上传至github上的是.deploy_git文件夹里面的东西，其他的source，public等文件夹都是存储于我们原来电脑中的。<br>&emsp;经过朕一番阅览众大臣上传的奏折，有如下方法可以解决：<br>&emsp;老规矩，先介绍解题思路。拟在github上面新建分支Hexo，把博客源文件放在新建的分支Hexo上面，我们在新电脑写博客时，直接拷贝Hexo分支上面的文件。然后安装好环境就可以写了。<br>&emsp;操作步骤如下<br>&emsp;（1）于github上在原来的仓库新建一个分支Hexo，并将其设为默认分支（以便后面拷贝就是拷贝这个分支上东西）。<br>&emsp;（2）在原电脑其他位置打开git bash,并输入<code>git clone git@github.com:×××××××××（你的仓库地址）</code>，将Hexo分支里面东西克隆过来，把.git以外的文件夹全部删掉，并且从博客源文件（除了.deploy_git）全部复制过来。值得注意的是，如果你克隆过theme中的主题文件，必须把主题文件中的.git文件夹删掉，不然会报错。原因是git不能嵌套上传。<br>&emsp;（3)<br>    git add . #提交所有修改<br>    git commit -m “add branch” #确认修改<br>    git push #推送到库上</p>
+<p>&emsp;在新电脑上搭建环境<br>&emsp;(4)安装git<br>    sudo apt-get install git #windows 下从官网下载安装包接下来步骤默认点确定<br>&emsp;(5)设置git邮箱和账号<br>    git config –global user.name “yourgithubname”<br>    git config –global user.email “yourgithubemail”<br>&emsp;(6)设置ssh key<br>    ssh-keygen -t rsa -C “youremail”<br>&emsp;(7)登录GitHub，打开「Settings」-&gt;「SSH and GPG keys」，然后点击「new SSH key」把id_rsa.pub公钥里面东西复制到Key文本框，点击Add SSH key<br>&emsp;(8)安装nodejs<br>    linux:<br>    sudo apt-get install nodejs<br>    sudo apt-get install npm<br>    windows:<br>    下载安装包即可<br>&emsp;(9)安装hexo<br>    sudo npm install hexo-cli -g<br>&emsp;(10)在你选择写博客的文件夹<br>    git clone git@………<br>    cd xxx.github.io<br>    npm install<br>    npm install hexo-deployer-git –save<br>    hexo g #生成部署<br>    hexo d<br>    hexo new newpage #然后写博客。<br>&emsp;(11)注意每次写完上传源文件到github;写之前先<code>git pull</code><br>    git add .<br>    git commit –m “xxxx”<br>    git push </p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">伟大的刘皇</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/06/29/aday/">http://yoursite.com/2020/06/29/aday/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/12/07/2020%E5%B9%B411%E6%9C%88%E5%B0%8F%E7%BB%93/"><i class="fa fa-chevron-left">  </i><span>2020年11月小结</span></a></div><div class="next-post pull-right"><a href="/2020/06/26/the-error-of-valine/"><span>the error of valine</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="vcomment"></div><script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'YNrDH3PvlvzW7F0D8bRNRF4s-gzGzoHsz',
+  appKey:'9Sk8O0XwhkkTEmaPcGO87YNT',
+  placeholder:'Just do IT',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10',
+  lang: 'zh-cn'
+})</script></div></div><footer class="footer-bg" style="background-image: url(https://i.loli.net/2020/02/10/jGIHa7zBni34DfE.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By 伟大的刘皇</div><!--.framework-info//span= _p('footer.driven') + ' - '
+//a(href='http://hexo.io')
+ // span Hexo
+//span.footer-separator |
+//span= _p('footer.theme') + ' - '
+//a(href='https://github.com/Molunerfinn/hexo-theme-melody')
+//  span Melody--><div class="footer_custom_text">hitokoto</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>Powered by</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
